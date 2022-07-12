@@ -3,27 +3,28 @@
 */
 
 /*********** General Styles Start ***********/
-@import url('');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 :root {
     --textColor: #3a3a3a;
-    --color1: #000;
-    --color2: #000;
-    --color3: #000;
+    --green: #94B49F;
+    --teal: #CEE5D0;
+    --beige: #FCF8E8;
+    --orange: #ECB390;
 }
 
 body {
-  color: var(--textColor);
+  color: var(--green);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
   font-family: '', Helvetica, sans-serif;
 }
-
-/* Here starts the codes for header */
-
-/* Here ends the code for header */
-
 
 /* Here starts the codes for section 1 */
 
@@ -38,8 +39,3 @@ h1, h2, h3, h4, h5, h6 {
 /* Here starts the codes for section 3 */
 
 /* Here ends the code for section 3 */
-
-
-/* Here starts the codes for footer */
-
-/* Here ends the code for footer */
