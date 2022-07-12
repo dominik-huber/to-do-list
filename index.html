@@ -10,9 +10,29 @@
     <script defer src="script.js"></script>
   </head>
   <body>
+    <div class="bg"></div>
+    <main class="container w-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-6 listWrapper">
+          <h1>To-Do-App</h1>
+          <input type="text" name="" id="taskName">
+          <button class="btn btn-primary" id="addTaskBtn"> Add Task</button>
 
-    <main>
-
+          <!-- Task reference -->
+          <div class="task">
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+              </div>
+              <input type="text" class="form-control" aria-label="Text input with checkbox">
+            </div>
+            <button class="btn btn-primary" id="editTask"></button>
+            <button class="btn btn-primary" id="deleteTask"></button>
+          </div>
+          <!-- Task reference end-->
+          
+        </div>
+      </div>
       <!-- Here starts header -->
       <section>
 

@@ -15,7 +15,16 @@
 }
 
 body {
-  color: var(--green);
+  color: black;
+}
+
+.bg{
+  background-image: url(img/layered-waves-haikei\ \(2\).svg);
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 h1 {
@@ -24,6 +33,18 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   font-family: '', Helvetica, sans-serif;
+}
+
+main{
+  height: 100vh;
+}
+
+.listWrapper{
+  background-color: white;
+}
+
+.btn-primary{
+  background-color: #ECB390;
 }
 
 /* Here starts the codes for section 1 */
