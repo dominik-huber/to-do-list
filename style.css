@@ -47,16 +47,6 @@ main{
   background-color: #ECB390;
 }
 
-/* Here starts the codes for section 1 */
-
-/* Here ends the code for section 1 */
-
-
-/* Here starts the codes for section 2 */
-
-/* Here ends the code for section 2 */
-
-
-/* Here starts the codes for section 3 */
-
-/* Here ends the code for section 3 */
+.disable .form-control {
+  text-decoration: line-through;
+}
