@@ -50,3 +50,17 @@ main{
 .disable .form-control {
   text-decoration: line-through;
 }
+.delete_button {  
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: text-top;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat:no-repeat;
+    background-image :url(../to-do-list/img/delete_icon.png)
+}
+
+

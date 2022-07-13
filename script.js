@@ -1,5 +1,21 @@
+const taskList = document.querySelector('.taskList');
+const tasks = document.querySelectorAll('.form-check-input');
+const buttonlist = document.querySelectorAll('.delete_button'); 
 // Here starts the codes for section 1
+/*
+add icons for delete button in html
+extract delete button from DOM and store them in a variable
+loop over the buttons that we retrieve and attach to each of them an event listener
 
+
+*/
+
+  buttonlist.forEach(button => {
+    button.addEventListener('click', (e) =>
+    e.currentTarget.parentElement.remove()
+    )
+  });
+ 
 // Here end the codes for section 1
 
 
@@ -9,8 +25,7 @@
 
 
 // Here starts the codes for mark task as done
-const taskList = document.querySelector('.taskList');
-const tasks = document.querySelectorAll('.form-check-input');
+
 
 tasks.forEach(task => {
   task.addEventListener('click', (e) => {
