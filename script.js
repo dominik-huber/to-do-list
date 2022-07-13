@@ -1,11 +1,8 @@
-// Here starts the codes for section 1
+// Get Container of all the tasks
+const taskList = document.querySelector('.taskList');
 
-// Here end the codes for section 1
-
-
-// Here starts the codes for section 2
-
-// Here end the codes for section 2
+// Get all input fields of the respectively task
+const tasks = document.querySelectorAll('.form-check-input');
 
 
 // Here starts the codes for mark task as done
@@ -14,6 +11,8 @@ const tasks = document.querySelectorAll('.form-check-input');
 
 tasks.forEach(task => {
   task.addEventListener('click', (e) => {
+    // Toggle Class "disable" of the parent div of the task after clicking the checkbox 
+    // and automatically uncheck the checkbox
     e.currentTarget.parentElement.parentElement.classList.toggle('disable');
     e.currentTarget.checked = false;
 
