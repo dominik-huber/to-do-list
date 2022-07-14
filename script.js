@@ -39,6 +39,7 @@ addTaskBtn.addEventListener('click', (e) => {
   taskList.prepend(element);
   markTask();
   deleteTask();
+  editTask()
 })
 
 /*
