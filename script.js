@@ -1,3 +1,15 @@
+// from Google
+function hashCode(str) {
+  var hash = 0, i, chr;
+  if (str.length === 0) return hash;
+  for (i = 0; i < str.length; i++) {
+    chr   = str.charCodeAt(i);
+    hash  = ((hash << 5) - hash) + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
+};
+
 const taskList = document.querySelector('.taskList');
 const tasks = document.querySelectorAll('.form-check-input');
 const buttonlist = document.querySelectorAll('.delete_button');
@@ -12,6 +24,8 @@ addTaskBtn.addEventListener('click', (e) => {
   const taskName = document.querySelector('#taskName').value;
   // 3.2 create an element and store it into a variable
   const element = document.createElement('div');
+  const id = hashCode(taskName) +'';
+  element.setAttribute('id',id);
   element.classList.add('task','mt-3');
   // 3.3 add the value of the task as innerText to the newly create element
   element.innerHTML = `          
