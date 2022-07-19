@@ -10,6 +10,8 @@
   return hash;
 };
 */
+
+
 const taskList = document.querySelector('.taskList');
 const tasks = document.querySelectorAll('.form-check-input');
 const buttonlist = document.querySelectorAll('.delete_button');
@@ -18,19 +20,35 @@ let tasknumber = 1;
 //1- retrieve the button and save it into a variable
 const addTaskBtn = document.querySelector('#addTaskBtn');
 
+if (!task == "") {
+  
+}
+
 //2- attach event (click) to the button
 addTaskBtn.addEventListener('click', (e) => {
-  //3- write the event handler
+
   // 3.1 retrieve the value of the text typed inside the input and save it into a variable
   const taskName = document.querySelector('#taskName').value;
+
+  const task = {
+    name: taskName,
+    isDone: false,
+    id: tasknumber
+  }
+
+  window.localStorage.setItem('task'+tasknumber, JSON.stringify(task));
+  window.localStorage.getItem('task'+tasknumber);
+//console.log(window.localStorage.getItem('task'+tasknumber));
+
+  //3- write the event handler
   // 3.2 create an element and store it into a variable
   const element = document.createElement('div');
   /*const id = hashCode(taskName) +'';
   element.setAttribute('id',id);*/
   element.classList.add('task','mt-3');
-  
+
   // 3.3 add the value of the task as innerText to the newly create element
-  element.innerHTML = `          
+  element.innerHTML = `
   <div class="row justify-content-center flex-row flex-wrap align-items-center">
     <div class="col-9">
       <div class="input-group">
@@ -78,11 +96,11 @@ function markTask(){
       // and automatically uncheck the checkbox
       this.parentElement.parentElement.classList.toggle('disable');
       this.checked = false;
-  
+
       // Toggle class "done" of the clicked task
       const taskDisabled = this.closest(".task")
       taskDisabled.classList.toggle('done');
-  
+
       // Check if task has class done and give position
       (taskDisabled.classList.contains("done"))
         ? taskList.append(taskDisabled)
@@ -105,5 +123,3 @@ function editTask(){
       taskInput.setAttribute('value',taskValue);
   }
 }
-
-
