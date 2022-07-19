@@ -80,7 +80,7 @@ function markTask(){
       this.checked = false;
   
       // Toggle class "done" of the clicked task
-      const taskDisabled = e.currentTarget.closest(".task")
+      const taskDisabled = this.closest(".task")
       taskDisabled.classList.toggle('done');
   
       // Check if task has class done and give position
@@ -96,7 +96,6 @@ function editTask(){
   let taskID = this.id.charAt(this.id.length - 1);
   let taskInput = document.getElementById("taskText" + taskID);
   let taskValue = taskInput.value;
-  console.log("test")
 
   if (taskInput.disabled) {
       taskInput.removeAttribute("disabled");
