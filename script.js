@@ -13,6 +13,7 @@
 
 
 const taskList = document.querySelector('.taskList');
+
 const tasks = document.querySelectorAll('.form-check-input');
 const buttonlist = document.querySelectorAll('.delete_button');
 let tasknumber = 1;
@@ -20,9 +21,57 @@ let tasknumber = 1;
 //1- retrieve the button and save it into a variable
 const addTaskBtn = document.querySelector('#addTaskBtn');
 
-if (!task == "") {
-  
-}
+//function loadingTasks() {
+//const mySavedTask = JSON.parse(localStorage.getItem('tasks'));
+//taskList.innerHTML = mySavedTask;
+//console.log(mySavedTask);
+//}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // console.log(localStorage.getItem('task'+tasknumber));
+  // check if localStorage has any tasks
+  // if not then return
+  let i = 1;
+  while (localStorage.getItem('task'+i) !== null) {
+
+  const mySavedTask = JSON.parse(localStorage.getItem('task'+i));
+  console.log(mySavedTask);
+
+  taskList.innerHTML +=
+  `<div class="task mt-3">
+  <div class="row justify-content-center flex-row flex-wrap align-items-center">
+    <div class="col-9">
+      <div class="input-group">
+        <div class="input-group-text">
+          <input class="form-check-input mt-0" type="checkbox" value="" id="${'markTask' + i }"
+            aria-label="Checkbox for following text input" />
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="" value="${mySavedTask.name}" id="${'taskText' + i}"
+          disabled />
+      </div>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-primary" id="${'editTask' + i }">
+        <i class="bi-pencil-square"></i>
+      </button>
+      <button class="btn btn-primary delete_button ms-3" id="${'deleteTask' + i}">
+        <i class="bi-trash"></i>
+      </button>
+    </div>
+  </div>
+  </div>`;
+  // Get the tasks from localStorage and convert it to an array
+  //let tasks = Object.entries(mySavedTask):
+  //console.log(mySavedTask);
+  // Loop through the tasks and add them to the list
+  //mySavedTask.forEach(task => {
+  //console.log(localStorage.getItem('task'+tasknumber));
+  //});
+  i++
+  }
+});
+
+
 
 //2- attach event (click) to the button
 addTaskBtn.addEventListener('click', (e) => {
@@ -36,8 +85,8 @@ addTaskBtn.addEventListener('click', (e) => {
     id: tasknumber
   }
 
-  window.localStorage.setItem('task'+tasknumber, JSON.stringify(task));
-  window.localStorage.getItem('task'+tasknumber);
+ window.localStorage.setItem('task'+tasknumber, JSON.stringify(task));
+//window.localStorage.getItem('task'+tasknumber);
 //console.log(window.localStorage.getItem('task'+tasknumber));
 
   //3- write the event handler
@@ -123,3 +172,9 @@ function editTask(){
       taskInput.setAttribute('value',taskValue);
   }
 }
+
+
+//window.onbeforeunload = function(){
+//const listWrapper = document.querySelector(".taskList");
+//localStorage.setItem("tasks",JSON.stringify(listWrapper.innerHTML))
+//}
