@@ -2,7 +2,6 @@ const taskList = document.querySelector('.taskList');
 const tasks = document.querySelectorAll('.form-check-input');
 const buttonlist = document.querySelectorAll('.delete_button');
 let tasknumber = 1;
-var shallow = 'shallow is cool';
 
 //Goal: I click on the button and a new todo gets added
 //1- retrieve the button and save it into a variable
@@ -84,6 +83,7 @@ function markTask(button) {
   const currentTask = window.localStorage.getItem('task' + button.dataset.tasknumber);
   const currenTaskParsed = JSON.parse(currentTask);
   
+  console.log("currentTask", currentTask);
   // Check if task has class done and give position and change the value of isDone
   if (taskDisabled.classList.contains("done")) {
     taskList.append(taskDisabled)
@@ -93,6 +93,7 @@ function markTask(button) {
     taskList.prepend(taskDisabled);
     currenTaskParsed.isDone = false;
   }
+  
   // save the task back to local storage
   const saveTask = JSON.stringify(currenTaskParsed);
   localStorage.setItem("task" + button.dataset.tasknumber, saveTask);
