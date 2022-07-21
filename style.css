@@ -4,7 +4,7 @@
 
 /*********** General Styles Start ***********/
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Patrick Hand&display=swap');
 
 :root {
   --textColor: #535353;
@@ -32,7 +32,7 @@ body {
 }
 
 h1 {
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: 'Patrick Hand', cursive;
   color: var(--textColor);
 }
 
